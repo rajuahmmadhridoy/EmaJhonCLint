@@ -1,0 +1,16 @@
+.header{
+    text-align: center;
+}
+.logo{
+    height: 50px;
+}
+
+.navlogo{
+    width: 150px;
+}
+
+.nav-link {
+    color: #222;
+    font-weight: 500;
+    margin: 0 12px;
+}
