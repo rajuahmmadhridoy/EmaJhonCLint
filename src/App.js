@@ -1,17 +1,59 @@
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Shop from './Component/Shop/Shop'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import Header from './Component/Header/Header'
-import Product from './Component/Product/Product';
-
+import DashBord from './Component/DashBord/DashBord';
+import Shop from './Component/Shop/Shop'
+import Authentication from './Component/Authenticataion/Authentication'
+import ProductDetails from './Component/ProductDetails/ProductDetails'
+import NoMatch from './Component/NoMatch/NoMatch'
+import { useState } from 'react';
+import { useEffect } from 'react';
+import Review from './Component/Review/Review';
+import { createContext } from 'react';
+import Shipment from './Component/Shipment/Shipment';
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
+export const UserContext = createContext()
 function App() {
+  const [loading, setLoading] = useState(false);
+  let [color, setColor] = useState("#2E150B");
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 1000)
+  }, []);
+  let [logedIn, setLogedIn] = useState([])
   return (
+    <UserContext.Provider value={[logedIn, setLogedIn]}>
     <div className="appCss">
-      <Header />
-      <Shop />
-      <Product />
+      {
+        loading ? (
+          <h1>loading</h1>
+        ) : (
+          <Router>
+            <Header />
+            <Switch>
+              <Route exact path='/' children={<Shop />} />
+              <Route path='/product/:key' component={ProductDetails} />
+              <Route path='/review' component={Review} />
+              <Route path='/dashbord' children={<DashBord />} />
+              {/* <PrivateRoute path='/shipment' children={<Shipment />}/> */}
+              <PrivateRoute path="/shipment"><Shipment></Shipment></PrivateRoute>
+              <Route path='/login'><Authentication /></Route>
+              <Route path='/*' children={<NoMatch />} />
+            </Switch>
+          </Router>
+        )
+      }
     </div>
+    </UserContext.Provider>
   );
 }
 

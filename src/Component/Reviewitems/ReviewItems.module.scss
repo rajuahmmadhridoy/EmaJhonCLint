@@ -1,0 +1,15 @@
+@import '../Styles/Shared/fontDefination.scss';
+@import '../Styles/Shared/color.scss';
+
+.title{
+    color: $headercolor;
+    font-size: $large-font-size;
+}
+.title h3 {
+    padding-right: 151px;
+    margin-top: 25px;
+}
+.title h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

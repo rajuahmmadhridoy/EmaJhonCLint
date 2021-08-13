@@ -1,0 +1,9 @@
+   handleClick=(e)=>{
+        console.log("this is working fine");
+        e.preventDefault();
+        e.target.style.color = 'black'
+        console.log(e.target);
+    }
+Programming Hero13:25
+onAnimationEnd={() => this.setState({fade: false})}
+        className={fade ? 'fade' : ''}

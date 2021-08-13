@@ -1,0 +1,32 @@
+@import '../Styles/Shared/color.scss';
+@import '../Styles/Shared/fontDefination.scss';
+.singleProductContent {
+    margin-left: 60px;
+}
+.singleProduct {
+    /* margin-top: 65px; */
+}
+.singleProductContent h5 {
+    color: $headercolor;
+    font-size: $large-font-size;
+    padding-right: 35px;
+    font-weight: 600;
+}
+.singleProductContent p {
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight:500;
+    color: #69707f;
+}
+.singleProductBtn {
+    width: 160px;
+    height: 40px;
+    border: none;
+    background-color: #230D36;
+    color: #fff;
+    padding: 10px 40px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+

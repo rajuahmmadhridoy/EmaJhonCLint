@@ -1,0 +1,54 @@
+.shopContainer {
+    /* margin-top: 115px; */
+}
+
+.productContainer {
+  /* margin-top: 70px; */
+  border-right: 1px solid gray;
+}
+.cartContainer {
+  /* margin-top: 70px; */
+  height: 300px;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  left: 73%;
+  top: 21%;
+  /* bottom: 62%; */
+}
+.cartContainer:hover{
+
+}
+
+/* width */
+.cartContainer::-webkit-scrollbar {
+    width: 20px;
+    display: none;
+
+    
+  }
+.cartContainer:hover::-webkit-scrollbar {
+    display: block;
+    
+  }
+
+  
+  /* Track */
+  .cartContainer::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .cartContainer::-webkit-scrollbar-thumb {
+    background: #888; 
+    height: 70px;
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  .cartContainer::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  .reviewBtn {
+    width: 195px;
+}

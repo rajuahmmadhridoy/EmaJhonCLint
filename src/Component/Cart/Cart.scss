@@ -1,0 +1,50 @@
+.cartHeader h1 {
+  font-size: 25px;
+  font-weight: 500;
+  /* margin-bottom: 15px; */
+}
+.cartHeader p {
+  font-size: 15px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.cartHeader .price span {
+  padding-left: 84px;
+}
+.cartHeader .shiping span {
+  padding-left: 7px;
+}
+.cartHeader .shiping span {
+  padding-left: 35px;
+}
+.cartHeader .total span {
+  padding-left: 7px;
+  border-top: 2px solid;
+}
+.cartHeader .total span {
+  padding-left: 80px;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    height: 50px;
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

@@ -1,3 +1,15 @@
 .appCss{
   overflow-x: hidden;
 }
+.appCss{
+  margin-top:150px;
+}
+
+
+/* width */
+.appCss::-webkit-scrollbar {
+  width: 20px;
+  display: none;
+
+  
+}

@@ -1,0 +1,33 @@
+
+.header {
+    text-align: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: #fff;
+    margin-bottom: 1000px;
+}
+.header {
+    text-align: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+.logo{
+    height: 50px;
+}
+
+.navlogo{
+    width: 150px;
+}
+
+.menu li a {
+    color: #222;
+    padding: 25px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+}

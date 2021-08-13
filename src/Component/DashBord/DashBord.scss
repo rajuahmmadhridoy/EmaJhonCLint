@@ -1,0 +1,33 @@
+.nav-menu-items {
+    position: fixed;
+    top: 10%;
+    left: 5%;
+    bottom: 20%;
+    height: 100vh;
+    width: 300px;
+    background: cadetblue;
+}
+.nav-menu-items li {
+    list-style: none;
+    width: 100%;
+    /* background: red; */
+    margin-top: 20px;
+    height: 45px;
+}
+.nav-menu-items li a {
+    text-decoration: none;
+    color: #222;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    display: block;
+}
+li.nav-items.active {
+    background: red;
+}
+/* .nav-items .active{
+    background: red;
+}
+.nav-items {
+    background: none;
+} */
