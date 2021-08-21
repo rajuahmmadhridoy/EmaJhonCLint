@@ -27,7 +27,7 @@ function App() {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-    }, 1000)
+    }, 500)
   }, []);
   let [logedIn, setLogedIn] = useState([])
   return (
@@ -35,7 +35,7 @@ function App() {
     <div className="appCss">
       {
         loading ? (
-          <h1>loading</h1>
+          <h1 className="spinner">loading</h1>
         ) : (
           <Router>
             <Header />
@@ -44,8 +44,7 @@ function App() {
               <Route path='/product/:key' component={ProductDetails} />
               <Route path='/review' component={Review} />
               <Route path='/dashbord' children={<DashBord />} />
-              {/* <PrivateRoute path='/shipment' children={<Shipment />}/> */}
-              <PrivateRoute path="/shipment"><Shipment></Shipment></PrivateRoute>
+              <PrivateRoute path='/shipment' children={<Shipment />}/>
               <Route path='/login'><Authentication /></Route>
               <Route path='/*' children={<NoMatch />} />
             </Switch>

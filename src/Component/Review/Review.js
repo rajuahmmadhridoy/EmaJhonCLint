@@ -42,6 +42,7 @@ const Review = () => {
   const handleProceedCheckOut = () =>{
     history.push('/shipment')
   }
+  document.title = "Review"
   return (
     <div>
       <Container>

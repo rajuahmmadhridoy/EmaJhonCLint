@@ -43,6 +43,7 @@ const Shop = () => {
     });
     setCart(cartProducts);
   }, []);
+  document.title = "Shop";
   return (
     <Container>
       <Row className="shopContainer">

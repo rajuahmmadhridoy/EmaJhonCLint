@@ -168,6 +168,7 @@ const Authentication = () => {
             setUser(newUserInfo);
             setLogedIn(newUserInfo)
             updateUser(user.name);
+            history.replace(from);
           })
           .catch((err) => {
             const newUserInfo = { ...user };
@@ -220,6 +221,12 @@ const Authentication = () => {
         console.log("user name error");
       });
   };
+
+  const authToggle = () =>{
+    setTimeout(()=>{
+      setNewUser(!newUser)
+    },1000)
+  }
   return (
     <div className="formDiv text-center">
       <div className="formInner">
@@ -275,7 +282,7 @@ const Authentication = () => {
         </div>
         <p className="createAccounts">
           {!newUser ? "Don,t Have an Account?" : "Already Have an Account?"}
-          <span className="loginLogOut" onClick={() => setNewUser(!newUser)}>
+          <span className="loginLogOut" onClick={authToggle}>
             {!newUser ? "Create new account" : "Log In"}
           </span>
         </p>

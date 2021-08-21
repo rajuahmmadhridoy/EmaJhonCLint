@@ -2,11 +2,17 @@ import React from "react";
 import logo from "../../images/logo.png";
 import "./Header.scss";
 import { Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useContext } from 'react';
 import { UserContext } from '../../App';
 const Header = () => {
   let [logedIn, setLogedIn] = useContext(UserContext);
+  // let history = useHistory()
+  const logOut = ()=>{
+    setLogedIn({});
+    // history.go('/')
+    window.location.replace("/");
+  }
   return (
     <div className="header">
       <img className="logo" src={logo} alt="" />
@@ -23,7 +29,7 @@ const Header = () => {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/review">Order Review</Link></li>
               <li><Link to="/manageinventory">Manage Inventory</Link></li>
-              <li><Link to="/login">{logedIn.email ? "Log Out" : "Log In"}</Link></li>
+              <li><Link to="/login">{logedIn.email ? <span onClick={logOut}>Log Out</span> : <span>Log In</span>}</Link></li>
             </Nav>
           </Navbar.Collapse>
         </div>
