@@ -5,8 +5,8 @@ export const DashBordData = [
         cName: 'nav-text'
     },
     {
-        title:'Reports',
-        path:'/dashbord',
+        title:'AddProduct',
+        path:'/dashbord/addProduct',
         cName: 'nav-text'
     },
     {

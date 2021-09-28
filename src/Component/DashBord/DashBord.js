@@ -56,7 +56,7 @@ const DashBord = () => {
                                 <Route exact path='/dashbord'>
                                     <Report />
                                 </Route>
-                                <Route exact path='/dashbord/products'>
+                                <Route exact path='/dashbord/addProduct'>
                                     <Products />
                                 </Route>
                             </Switch>

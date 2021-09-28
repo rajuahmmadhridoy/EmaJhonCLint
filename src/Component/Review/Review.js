@@ -21,12 +21,15 @@ const Review = () => {
   useEffect(() => {
     const savedCart = getDatabaseCart();
     let productKeys = Object.keys(savedCart);
-    let cartProducts = productKeys.map((key) => {
-      const product = fakeData.find((pd) => pd.key === key);
-      product.quantity = savedCart[key];
-      return product;
-    });
-    setCart(cartProducts);
+    fetch('http://localhost:4000/productByKeys',{
+      method:'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(productKeys),
+    })
+    .then(res => res.json())
+    .then(data => setCart(data))
   }, []);
 
   const handleRemoveItem = (key) => {

@@ -43,7 +43,7 @@ function App() {
               <Route exact path='/' children={<Shop />} />
               <Route path='/product/:key' component={ProductDetails} />
               <Route path='/review' component={Review} />
-              <Route path='/dashbord' children={<DashBord />} />
+              <Route path='/manageinventory' children={<DashBord />} />
               <PrivateRoute path='/shipment' children={<Shipment />}/>
               <Route path='/login'><Authentication /></Route>
               <Route path='/*' children={<NoMatch />} />

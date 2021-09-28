@@ -10,18 +10,15 @@ import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.scss";
 const Shop = () => {
-  console.log(fakeData);
-  // const first10 = fakeData.slice(0,10);
-  const [product, setProduct] = useState(fakeData.slice(0, 10));
-  // const product = fakeData;
-  // console.log(product);
-  // const [product, setProduct] = useState([]);
-  // useEffect(() => {
-  //     fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`)
-  //     .then(res => res.json())
-  //     .then(data => setProduct(data.categories))
-  // },[])
-  // console.log(product);
+
+const [products, setProduct] = useState([]);
+
+useEffect(() => {
+  fetch('http://localhost:4000/products')
+  .then(res => res.json())
+  .then(data => setProduct(data))
+},[])
+
   const [cart, setCart] = useState([]);
   // console.log('this is cart',cart);
   const handleAddProduct = (product) => {
@@ -34,21 +31,23 @@ const Shop = () => {
   };           
   useEffect(() => {
     const savedCart = getDatabaseCart();
-    console.log(savedCart);
     let productKeys = Object.keys(savedCart);
-    let cartProducts = productKeys.map((key) => {
-      const product = fakeData.find((pd) => pd.key === key);
-      product.quantity = savedCart[key];
-      return product;
-    });
-    setCart(cartProducts);
+    fetch('http://localhost:4000/productByKeys',{
+      method:'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(productKeys),
+    })
+    .then(res => res.json())
+    .then(data => setCart(data))
   }, []);
   document.title = "Shop";
   return (
     <Container>
       <Row className="shopContainer">
         <Col md={9} className="productContainer">
-          {product.map((pd) => (
+          {products.map((pd) => (
             <Product
               handleAddProduct={handleAddProduct}
               pd={pd}
